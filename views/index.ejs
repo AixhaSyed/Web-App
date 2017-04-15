@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Book Store</h1>
+  <h3>Add a Book</h3>
+
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="Book">
+    <br>
+    <input type="text" placeholder="Author" name="AuthorName">
+    <br>
+    <input type="text" placeholder="Format" name="Format">
+    <br>
+    <input type="text" placeholder="Price" name="Price">
+    <br>
+    
+    
+    <button type="submit">Submit</button>
+  </form>
+  <ul class="quotes">
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <li class="quote">
+    <br>
+      <span><%= quotes[i].Book %></span>
+      <br>
+      <span><%= quotes[i].AuthorName %></span>
+      <br>
+      <span><%= quotes[i].Format %></span>
+      <br>
+      <span><%= quotes[i].Price %></span>
+      
+    </li>
+  <% } %>
+  </ul>
+  <div>
+    <h2>Replace last Book</h2>
+    <button id="update"> Replace </button>
+  </div>
+
+  <div>
+    <h2>Delete first Book</h2>
+    <button id="delete"> Delete</button>
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
